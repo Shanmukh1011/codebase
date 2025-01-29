@@ -1,0 +1,18 @@
+// "static void main" must be defined in a public class.
+// 2d array 
+
+public class Main {
+    public static void main(String[] args) {
+    int metrix[][] = {{1,2,3,4},{2,4,6,8},{1,3,5,7},{0,9,8,7}};
+        printMetrix(metrix);
+    }
+    
+    public static void printMetrix(int metrix[][]){
+        for(int i = 0;i <metrix.length;i++){
+            for(int j = 0;j<metrix[0].length;j++){
+                System.out.print(metrix[i][j]+ "  ");
+            }
+            System.out.println();
+        }
+    }
+}
