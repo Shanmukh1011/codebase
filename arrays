@@ -16,3 +16,61 @@ public class Main {
         }
     }
 }
+
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+    int metrix[][] = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        spiralMetrix(metrix);
+    }
+    
+    public static void printMetrix(int metrix[][]){
+        for(int i = 0;i <metrix.length;i++){
+            for(int j = 0;j<metrix[0].length;j++){
+                System.out.print(metrix[i][j]+ "  ");
+            }
+            System.out.println();
+        }
+    }
+// spiralmetrix code
+
+    public static void spiralMetrix(int metrix[][]){
+        int startRow = 0;
+        int startColumn= 0;
+        int endRow= metrix.length-1;
+        int endColumn = metrix[0].length-1;
+        
+        
+        while(startRow <= endRow && startColumn <=endColumn){
+            //top line;
+            for(int j = startColumn;j <=endColumn;j++){
+                System.out.print(metrix[startRow][j]+" ");
+            }
+            //right line
+            for(int i =startRow+1;i <=endRow;i++){
+                System.out.print(metrix[i][endColumn]+ " ");
+            }
+            //bottom line;
+            for(int j = endColumn-1; j >= startColumn;j--){
+                if(startColumn== endColumn){
+                    break;
+                }
+                
+                System.out.print(metrix[endRow][j] + " ");
+                
+            }
+            //left line;
+            for(int i = endRow-1;i >= startRow+1;i--){
+                if(startRow==endRow){
+                    break;
+                }
+                System.out.print(metrix[i][startColumn]+ " ");
+                
+            }
+            startRow++;
+            startColumn++;
+            endRow--;
+            endColumn--;
+        }
+    }
+}
