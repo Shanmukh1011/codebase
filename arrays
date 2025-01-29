@@ -74,3 +74,38 @@ public class Main {
         }
     }
 }
+
+
+
+//diagnol sum brute force
+
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+int metrix[][] = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+        spiralMetrix(metrix);
+    }
+    
+    public static void printMetrix(int metrix[][]){
+        for(int i = 0;i <metrix.length;i++){
+            for(int j = 0;j<metrix[0].length;j++){
+                System.out.print(metrix[i][j]+ "  ");
+            }
+            System.out.println();
+        }
+    }
+    public static void spiralMetrix(int metrix[][]){
+        int sum = 0;
+       for(int i = 0;i < metrix.length;i++){
+           for(int j = 0;j <metrix[0].length;j++){
+               if(i == j){
+                   sum+=metrix[i][j];
+               }
+               else if(i+j == metrix.length-1){
+                   sum+=metrix[i][j];
+               }
+           }
+       }
+        System.out.print(sum);
+    }
+}
